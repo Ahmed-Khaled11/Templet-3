@@ -1,0 +1,604 @@
+html{
+    scroll-behavior: smooth;
+}
+/* start variable */
+:root{
+    --main-color: orangered;
+    --transpern-color:#171819;
+    --section-padding:100px;
+}
+/* start variable */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Nunito', sans-serif;
+}
+.container{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul{
+    list-style: none;
+}
+/* small screen */
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* meduim screen */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large screen */
+@media (min-width:1200px){
+    .container{
+        width:1170px;
+    }
+}
+img{
+    transition: 0.4s;
+}
+img:hover{
+    transform: scale(1.04);
+}
+/* start header */
+header{
+    background-color: var(--transpern-color);
+
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+@media (max-width:767px){
+    header .container{
+    height: 70px;
+    }
+}
+header .container .logo{
+    font-size: 30px;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+}
+@media (max-width:767px){
+    header .container .logo{
+        font-size: 30px;
+        font-weight: 600;
+        min-width: 84px;
+    }
+}
+header .container .logo:hover{
+    color: var(--main-color);
+}
+ul{
+    display: flex;
+    flex-direction: row;
+}
+header .container .links ul li{
+
+    padding-left: 0;
+}
+header .container .links ul li .home{
+    color: var(--main-color);
+}
+header .container .links ul li a{
+    text-decoration: none;
+    font-size: 14px;
+    color:#fff;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+}
+@media (max-width:767px){
+    header .container .links ul li{
+        margin-bottom:10px;
+        margin-bottom:10px;
+        
+    }
+    header .container .links ul{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--transpern-color);
+    border-left: 1px solid var(--main-color);
+    margin-right: 5px;
+    flex-direction: column;
+    position: absolute;
+    z-index: 4;
+    top: 60px;
+    right: 10px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    display: none;
+    }
+    header .container .links ul li a{
+        font-size: 10px;
+        padding: 10px 5px;
+    }
+}
+.links i{
+    color: white;
+    z-index: 4;
+    font-size: 40px;
+    position: absolute;
+    top: 15px;
+    right: 36px;
+    transition: 0.4s;
+}
+.links i:hover{
+    color: var(--main-color);
+    cursor: pointer;
+}
+@media (min-width:768px){
+    .links i{
+        display: none;
+    }
+}
+.links i:hover + ul{
+    display: flex;
+}
+header .container .links ul li a::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color:var(--main-color);
+    transition: 0.4s;
+}
+header .container .links ul li a:hover::before{
+    width: 100%;
+}
+header .container .links ul li a:hover{
+    color: var(--main-color);
+}
+/* end header */
+/* start landing  */
+.landing{
+    background-image: url(../images/img_gymnasium_v1.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.landing::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 80%);
+}
+.landing .content{
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translatey(-50%);
+    }
+.landing .content h4{
+    color: rgb(170, 170, 170);
+    margin-bottom: 30px;
+}
+.landing .content h1{
+    color: #fff;
+    font-size: 45px;
+    font-weight: 800;
+}
+.landing .content .btn-1{
+    background-color: transparent;
+    padding: 15px 25px;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.landing .content .btn-2{
+    background-color: transparent;
+    padding: 15px 25px;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    text-transform: uppercase;
+    margin-right: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.landing .content .btn-1:hover{
+    color: var(--main-color);
+}
+.landing .content .btn-2:hover{
+    background-color: #fff;
+    border: none;
+}
+/* end landing  */
+/* start pay  */
+.pay{
+    background-color: var(--transpern-color);
+}
+.pay .container .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(450px , 1fr));
+    color: #fff;
+}
+@media(max-width:992px){
+    .pay .container .content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    }
+}
+.pay .container .content .box-1,
+.pay .container .content .box-2{
+    padding: 20px 30px;
+    margin: 0 auto;
+}
+@media(max-width:768px){
+.pay .container .content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+} 
+@media(max-width:991px){
+    .pay .container .content .box-2{
+        border-left:transparent;
+        border-bottom: 1px solid var(--main-color);
+    }
+}
+.pay .container .content .box-1 h3{
+    font-size: 20px;
+    font-weight: normal;
+    max-width: 100%;
+}
+.pay .container .content .box-1 p{
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+.pay .container .content .box-1 a button{
+    padding: 15px 100px;
+    margin: 5px auto;
+    color: #fff;
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.pay .container .content .box-1 a button:hover{
+    background-color: #fff;
+    color: var(--main-color)
+}
+
+@media(min-width:992px){
+    .pay .container .content .box-2{
+    border-left: 1px solid var(--main-color);
+    }
+}
+@media(max-width:768px){
+    .pay .container .content .box-2{
+        border-left: transparent ;
+        border-bottom: 1px solid var(--main-color);
+    }
+}
+.pay .container .content .box-2 .content-1 p{
+    color: #777;
+    font-size: 20px;
+    font-weight: normal;
+}
+/* end pay  */
+/* start members  */
+.members {
+    margin-top: 80px;
+}
+.members .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+}
+@media (max-width:991px){
+.members .container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+}
+.members .container .box{
+    margin-left: 40px;
+    padding-top: 10px;
+}
+@media(max-width:768px){
+    .members .container .box{
+        margin-left: 10px;
+    }
+}
+
+.members .container .box img{
+    max-width: 100%;
+}
+.members .container .box h1{
+    border-left: 1px solid var(--main-color);
+    padding-left: 10px;
+    font-weight: bold;
+}
+.members .container .box h1 span:hover{
+    color: var(--main-color);
+    cursor: pointer;
+}
+@media (max-width:991px){
+    .members .container .box{
+        padding-bottom: 40px;
+    }
+}
+.members .box p,
+.members .box .memb{
+    color: #777;
+} 
+.members .box .memb{
+    line-height: 1.8;
+}
+/* end members  */
+/* start training  */
+.training{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+@media(max-width:768px){
+    .training{
+    padding-top: 30px;
+}
+}
+.training p{
+    text-align: center;
+    color: #777;
+    font-size: 22px;
+    margin-bottom: 0;
+}
+.training h1{
+    margin-top: 0;
+    text-align: center;
+    font-weight: 800;
+    font-size: 38px;
+}
+.training .container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+}
+.training .container .box{
+    margin-left: 30px;
+}
+@media(max-width:768px){
+    .training .container .box{
+        margin-left: auto;
+    }
+}
+.training .container .box img{
+    width: 100%;
+}
+.training .container .box .col{
+    margin-left: 15px;
+}
+.training .container .box .text h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.training .container .box .text p{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+}
+.training .container .box .text span{
+    font-size: 14px;
+    font-weight: bold;
+}
+.box .lore{
+    text-align: start;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-left: 15px;
+}
+.training .container .box .col{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.box .col .price{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    text-align: center;
+    padding-top: 14px;
+    margin-top: 14px;
+    right: 10px;
+    font-weight: bold;
+    color: white;
+}
+/* end training  */
+
+/* start schudelus */
+.schedules{
+    background-color: var(--transpern-color);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.schedules .text{
+    text-align: center;
+}
+.schedules .text p{
+    font-size: 24px;
+    color: #777;
+}
+.schedules .text h1{
+    font-size: 38px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: -1.5px;
+}
+@media (max-width:768px){
+.schedules .container{
+    overflow-x:scroll;
+}
+
+}
+.schedules .container table{
+    width: 100%;
+    border-color: #eee;
+    border-spacing: 0px;
+}
+.schedules .container table i{
+    font-size: 20px;
+}
+.schedules .container th{
+    padding: 20px 25px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: 1px solid var(--transpern-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.schedules .container td{
+    padding: 20px 25px;
+    background-color: var(--transpern-color);
+    color: #fff;
+    text-align: center;
+    border: 1px solid rgb(42, 42, 42);
+}
+.schedules .container td span{
+    color: #777;
+    font-size: 12px;
+}
+/* start schedules */
+/* start contact  */
+.contact .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(400px , 1fr));
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+@media(max-width:768px){
+    .contact .container{
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+@media(max-width:991px){
+    .contact .container{
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    }
+}
+.contact .container .box,
+.contact .container .box-2{
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: start;
+}
+.contact .container h1{
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.contact .container .box input{
+    display: block;
+    padding: 15px;
+    width: 100%;
+    margin-top: 20px ;
+    margin-bottom: 15px ;
+    outline: transparent;
+    border: 1px solid rgb(207, 207, 207);
+}
+.contact .container .box textarea{
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    display: block;
+    outline: transparent;
+    border: 1px solid rgb(207, 207, 207);
+}
+.contact .container .box .button{
+    width: 100%;
+    padding: 20px 15px;
+    background-color: #171819;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    transition: 0.4s;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.contact .container .box .button:hover{
+    background-color: var(--main-color);
+}
+.contact .container .box-2 i{
+    margin-right: 10px;
+    color: var(--main-color);
+    font-size: 24px;
+}
+.contact .container .box-2 p{
+    color: #777;
+    font-size: 18px;
+}
+@media (max-width:768px){
+.contact .container .box-2 iframe{
+    width: 265px;
+}
+}
+/* end contact  */
+/* start footer  */
+.footer{
+    background-color: var(--transpern-color);
+    border-top-right-radius:15px ;
+    border-top-left-radius:15px ;
+}
+.footer .container{
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+.footer .container p{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.footer .container p span a{
+    font-weight: bold;
+    color: var(--main-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer .container a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding-left: 10px;
+    transition: 0.4s;
+    
+}
+.footer .container p a:hover{
+    color: rgb(1, 139, 251);
+}
+/* end footer  */
+
